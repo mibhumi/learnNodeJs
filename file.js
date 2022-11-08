@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 // reading file
-fs.readFile('./demo.txt', (err, data)=>{
+fs.readFile('./documents/demo.txt', (err, data)=>{
     if(err) {
         console.log('error: ', err);
     } else if(data) {
@@ -10,7 +10,7 @@ fs.readFile('./demo.txt', (err, data)=>{
 });
 
 // writing file
-fs.writeFile('./demo.txt', 'Hello World', ()=>{ console.log('writeFile function exicuted') } );
+fs.writeFile('./documents/demo.txt', 'Hello World', ()=>{ console.log('writeFile function exicuted') } );
 
 // directories
 if (!fs.existsSync('./asserts')) {
