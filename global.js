@@ -1,5 +1,5 @@
 // global object
-
+// this file is just for learning purpose of basic javascript
 console.log(global);
 
 // setTimeout function
@@ -15,3 +15,6 @@ setTimeout(()=>{
 const demoInterval = setInterval(() => {
     console.log('I am an interval function');
 }, 1000);
+
+//direname and filemname
+console.log( 'Directory name: ' + __dirname + '\n File name: ' + __filename);
