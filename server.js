@@ -1,9 +1,19 @@
 const http = require('http');
 const fs = require('fs');
+const _ = require('lodash');
 
 const server = http.createServer((req, res)=>{
-    console.log('request made');
-    console.log('request method ' + req.method + ' request url ' + req.url );
+
+    // lodash
+    const num = _.random(20);
+    console.log(num);
+
+    const greet = _.once(()=>{
+        console.log('namaste');
+    });
+
+    greet(); // call greet only once
+    greet(); // not going to call
     
     // set header
     res.setHeader('content-type','text/html');
