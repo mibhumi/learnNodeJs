@@ -1,0 +1,24 @@
+{
+  "name": "learnnodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "file.js",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mibhumi/learnNodeJs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mibhumi/learnNodeJs/issues"
+  },
+  "homepage": "https://github.com/mibhumi/learnNodeJs#readme"
+}
