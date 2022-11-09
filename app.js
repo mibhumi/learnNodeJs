@@ -1,4 +1,5 @@
 const express = require('express');
+const morgan = require('morgan');
 // const ejs = require('ejs');
 
 // calling express
@@ -9,6 +10,21 @@ app.set('view engine', 'ejs');
 
 // listen for request port 3000
 app.listen(3000);
+
+// middleware and static files 
+// app.use(express.static('public')); // inside public folder all the files are accessable by browser
+app.use(express.static('public'));
+
+app.use(morgan('tiny'));
+
+// basic middleware
+// app.use((req, res, next) => {
+//     console.log('new request made');
+//     console.log('host', req.host);
+//     console.log('path', req.path);
+//     console.log('method', req.method);
+//     next();
+// })
 
 // request
 app.get('/', (req, res) => {
