@@ -15,6 +15,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // register view engine
 app.set('view engine', 'ejs');
+app.use(express.urlencoded({extended: true}));
 
 // mongoose and mongo sandbox routes
 // app.get('/add-blog', (req,res) => {
@@ -94,6 +95,41 @@ app.get('/blogs', (req, res) => {
             .catch((err)=> { 
                 console.log(err)
             })
+});
+
+// handle post request for blogs
+app.post('/blogs', (req, res) => {
+    const newBlog = Blog(req.body);
+    newBlog.save()
+        .then((result)=>{
+            res.redirect('/blogs');
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+});
+
+
+app.get('/blogs/:id', (req, res) => {
+    const id = req.params.id;
+    Blog.findById(id)
+        .then((result)=>{
+            res.render('details', { blog: result, title: 'blog details' })
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
+});
+
+app.delete('/blogs/:id', (req, res) => {
+    const id = req.params.id;
+    Blog.findByIdAndDelete(id)
+        .then((result)=>{
+            res.json({ redirect: '/blogs'});
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
 });
 
 app.get('/blog/create', (req, res) => {
