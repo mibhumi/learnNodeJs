@@ -73,7 +73,7 @@ app.use(morgan('tiny'));
 // request
 app.get('/', (req, res) => {
 
-    res.redirect('/blogs');
+    res.redirect('/blog');
 
     // const blogs = [
     //     {title: 'new york', snippet: 'it is a city'},
